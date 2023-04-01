@@ -1,4 +1,4 @@
-// Class 7
+// Class 7 : An array containing the command line arguments passed when the Node.js process was launched.
 console.log(process.argv);
 
 const parm1 = process.argv[2];
@@ -7,7 +7,10 @@ if (parm1 === "add") {
    console.log("You can add");
 }
 
-//class 8: yargs: build interactive command line tools by parsing arguments and generating an elegant user interface. : npm i yargs@13.3.2
+//class 8: Yargs: 
+//Build interactive command line tools by parsing arguments and generating an elegant user interface. 
+//npm i yargs@13.3.2
+
 const yargs = require("yargs");
 const getMethod = require("./method");
 //console.log(process.argv);
