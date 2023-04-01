@@ -7,7 +7,7 @@ if (parm1 === "add") {
    console.log("You can add");
 }
 
-//class 8: yargs
+//class 8: yargs: build interactive command line tools by parsing arguments and generating an elegant user interface. : npm i yargs@13.3.2
 const yargs = require("yargs");
 const getMethod = require("./method");
 //console.log(process.argv);
