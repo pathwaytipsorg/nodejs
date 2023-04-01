@@ -1,9 +1,9 @@
 // Class 1 : fs module to write data to a file (*.out, *.csv, *.txt)
 const abc = require("fs");
 
-f.writeFileSync("firstExample.out", "Hello");
+f.writeFileSync("firstExample.txt", "Hello");
 
-abc.appendFileSync("firstExample.out", " testing my abc const");
+abc.appendFileSync("firstExample.txt", " testing my abc const");
 
 //Class 2 : Return Method : To specify the value that a function should return.
 const getMyData = function (a, b) {
