@@ -10,7 +10,7 @@ if (parm1 === "add") {
 //class 8: Yargs: 
 //Build interactive command line tools by parsing arguments and generating an elegant user interface. 
 //npm i yargs@13.3.2
-
+//process.argv provides a basic way to access command line arguments, yargs provides a more powerful and user-friendly way to build command line interfaces.
 const yargs = require("yargs");
 const getMethod = require("./method");
 //console.log(process.argv);
