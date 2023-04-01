@@ -29,7 +29,7 @@ yargs.command({
     },
     age: {
       demandOption: true,
-      type: "int",
+      type: "number",
     },
     code: {
       demandOption: true,
