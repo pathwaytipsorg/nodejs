@@ -19,7 +19,7 @@ yargs.command({
       type: "string",
     },
   },
-  handler: function (argv) {
+  handler(argv) {
     getMethod.addStudentRecords(argv.name, argv.age, argv.code);
   },
 });
