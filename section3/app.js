@@ -28,16 +28,16 @@ yargs.command({
 // Create remove command
 yargs.command({
     command: 'remove',
-    describe: 'Remove a note',
+    describe: 'Remove student record',
     builder: {
         title: {
-            describe: 'Note title',
-            demandOption: true,
+            describe: 'Students Code',
+            demandOption: code,
             type: 'string'
         }
     },
     handler: function (argv) {
-        notes.removeNote(argv.title)
+        getMethod.removeStudentRecords(argv.code)
     }
 })
 
@@ -46,7 +46,7 @@ yargs.command({
     command: 'list',
     describe: 'List your notes',
     handler: function () {
-        console.log('Listing out all notes')
+        getMethod.getStudentRecords()
     }
 })
 
