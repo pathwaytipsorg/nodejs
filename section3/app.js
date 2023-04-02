@@ -1,13 +1,12 @@
-const chalk = require('chalk')
-const yargs = require('yargs')
+const yargs = require("yargs");
 const getMethod = require("./method");
 
 yargs.command({
   command: "add",
-  //describe: "Add student records",
+  describe: "Add student records",
   builder: {
     name: {
-      //describe: "Add name",
+      describe: "Add student records",
       demandOption: true,
       type: "string",
     },
@@ -27,27 +26,27 @@ yargs.command({
 
 // Create remove command
 yargs.command({
-    command: 'remove',
-    describe: 'Remove student record',
-    builder: {
-        title: {
-            describe: 'Students Code',
-            demandOption: code,
-            type: 'string'
-        }
+  command: "remove",
+  describe: "Remove student record",
+  builder: {
+    code: {
+      describe: "Students Code",
+      demandOption: true,
+      type: "string",
     },
-    handler: function (argv) {
-        getMethod.removeStudentRecords(argv.code)
-    }
-})
+  },
+  handler: function (argv) {
+    getMethod.removeStudentRecords(argv.code);
+  },
+});
 
 // Create list command
 yargs.command({
-    command: 'list',
-    describe: 'List your notes',
-    handler: function () {
-        getMethod.getStudentRecords()
-    }
-})
+  command: "list",
+  describe: "List your notes",
+  handler: function () {
+    getMethod.getStudentRecords();
+  },
+});
 
-yargs.parse()
+yargs.parse();
