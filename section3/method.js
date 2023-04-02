@@ -1,11 +1,9 @@
 const chalk = require("chalk");
 const f = require("fs");
 
-const addStudentRecords = function (name, age, code) {
+const addStudentRecords = (name, age, code) => {
   const oldStudentDetails = getStudentRecords();
-  const duplicateNotes = oldStudentDetails.filter(function (st) {
-    return st.code === code;
-  });
+  const duplicateNotes = oldStudentDetails.filter((st) => st.code === code);
 
   if (duplicateNotes.length === 0) {
     oldStudentDetails.push({
