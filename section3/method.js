@@ -1,11 +1,12 @@
+const chalk = require("chalk");
 const f = require("fs");
 
 const addStudentRecords = function (name, age, code) {
   const oldStudentDetails = getStudentRecords();
-  const duplicateNotes = oldStudentDetails.filter(function (student) {
-    return student.code === code;
+  const duplicateNotes = oldStudentDetails.filter(function (st) {
+    return st.code === code;
   });
-  
+
   if (duplicateNotes.length === 0) {
     oldStudentDetails.push({
       name: name,
@@ -20,19 +21,19 @@ const addStudentRecords = function (name, age, code) {
 };
 
 const getStudentRecords = function () {
-    try {
-      const dBuffer = f.readFileSync("json-1.json");
-      const dJSON = dBuffer.toString();
-      const student = JSON.parse(dJSON);
-      return student;
-    } catch (e) {
+  try {
+    const dBuffer = f.readFileSync("json-records.json");
+    const dJSON = dBuffer.toString();
+    const students = JSON.parse(dJSON);
+    return students;
+  } catch (e) {
     return [];
   }
 };
 
 const saveStudentRecords = function (students) {
   const dataJSON = JSON.stringify(students);
-  fs.writeFileSync("json-4.json", dataJSON);
+  f.writeFileSync("json-records.json", dataJSON);
 };
 
 const removeStudentRecords = function (code) {
@@ -40,7 +41,7 @@ const removeStudentRecords = function (code) {
   const studentsToKeep = students.filter(function (student) {
     return student.code !== code;
   });
-  console.log(students.length + " + " + studentsToKeep.length);
+  //console.log(students.length + " + " + studentsToKeep.length);
   if (students.length > studentsToKeep.length) {
     console.log(chalk.green.inverse("Student record removed!"));
     saveStudentRecords(studentsToKeep);
@@ -49,4 +50,4 @@ const removeStudentRecords = function (code) {
   }
 };
 
-module.exports = { addStudentRecords, getStudentRecords, removeStudentRecords};
+module.exports = { addStudentRecords, getStudentRecords, removeStudentRecords };
