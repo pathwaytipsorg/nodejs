@@ -7,4 +7,5 @@ response.statusCode
 
 Refer: 
 https://weatherstack.com
+
 https://weatherstack.com/documentation#query_parameter
