@@ -1,7 +1,7 @@
 const request = require("postman-request");
 
 const weatherStatus = (zip, callback) => {
-  const api = `http://api.weatherstack.com/current?access_key=6941a99dd0bca77d1b114a66d10dc4e0&query=${encodeURIComponent(
+  const api = `http://api.weatherstack.com/current?access_key=test6941a99dd0bca77d1b114a66d10dc4e0&query=${encodeURIComponent(
     zip
   )}`;
   request({ url: api, json: true }, (error, response, body) => {
