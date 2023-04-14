@@ -20,7 +20,7 @@ const { salary = 2000, age: EmpAge } = emp;
 console.log("Age is " + EmpAge + " and salary is " + salary);
 
 //
-const transaction = (type, { firstName, age }) => {
+const transaction = (type, { firstName, age }={}) => {
   console.log("Transaction is for " + firstName + " and age is " + age);
 };
 
