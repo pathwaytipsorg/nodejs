@@ -9,5 +9,5 @@ app.use("/", router);
 
 // start the server
 app.listen(port, () => {
-  console.log("Server started on port 5000");
+  console.log(`Server listening on port ${port}`);
 });
