@@ -1,17 +1,17 @@
 function asyncOperation() {
   return new Promise((resolve, reject) => {
     // Simulating an asynchronous operation
+    setTimeout(() => {
+      const randomNum = Math.random();
 
-    const randomNum = Math.random();
-    //const randomNum = 0.2;
-
-    // Resolve the promise if the random number is greater than 0.5
-    if (randomNum > 0.5) {
-      resolve(`Success! Random number: ${randomNum}`);
-    } else {
-      // Reject the promise if the random number is less than or equal to 0.5
-      reject(`Error! Random number: ${randomNum}`);
-    }
+      // Resolve the promise if the random number is greater than 0.5
+      if (randomNum > 0.5) {
+        resolve(`Success! Random number: ${randomNum}`);
+      } else {
+        // Reject the promise if the random number is less than or equal to 0.5
+        reject(`Error! Random number: ${randomNum}`);
+      }
+    }, 2000); // Simulating a 2-second asynchronous operation
   });
 }
 
