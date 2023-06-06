@@ -1,20 +1,23 @@
 const mongoose = require("mongoose");
-const User = require("./models/user"); // import the User model
+const User = require("./models/retail-customer"); // import the User model
 
 const connectDB = async () => {
   try {
-    const connect = await mongoose.connect("mongodb://127.0.0.1:27017/myapp", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const connect = await mongoose.connect(
+      "mongodb://127.0.0.1:27017/retail-shop",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    );
     console.log("Mongo DB Connected!!!");
     console.log(`Hostname: ${connect.connection.host}`);
 
     // Insert a new user into the database
     const newUser = new User({
-      name: "Shell Doe",
-      email: "doe@pragra.com",
-      password: "#$%@&#*#(#jdndjdn#*37363&#^#",
+      name: "Mike Doee",
+      age: 21,
+      email: "mikedoe@pragra.com",
     });
 
     await newUser.save();
