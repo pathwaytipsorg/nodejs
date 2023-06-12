@@ -5,7 +5,7 @@ const port = process.env.PORT || 5000;
 const router = require("./router");
 
 // use the router in your app
-app.use("/", router);
+app.use(express.json(), router);
 
 // start the server
 app.listen(port, () => {
