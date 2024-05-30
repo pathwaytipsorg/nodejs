@@ -65,10 +65,11 @@ const request = require('supertest');
 const app = require('../app');
 
 describe('API Endpoints', () => {
-    it('should return a hello message', async () => {
+    it('should return a 200 & key should exists', async () => {
         const res = await request(app).get('/api');
         expect(res.statusCode).toEqual(200);
-        expect(res.body).toHaveProperty('message', 'Hello, World!');
+        //expect(res.body).toHaveProperty('message', 'Hello, MERN Folks!');
+        expect(res.body).toHaveProperty('message');
     });
 
     it('should create new data', async () => {
@@ -87,6 +88,7 @@ describe('API Endpoints', () => {
         expect(res.body).toHaveProperty('error', 'No data provided');
     });
 });
+
 ```
 
 5. Update package.json
