@@ -18,6 +18,7 @@ npm install --save-dev jest supertest
 Create a file named app.js for the Express application:
 
 // app.js
+```
 const express = require('express');
 const app = express();
 
@@ -38,25 +39,28 @@ app.post('/api/data', (req, res) => {
 
 module.exports = app;
 Create a file named server.js to start the server:
-
+```
 
 // server.js
+```
 const app = require('./app');
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+```
 
 4. Write Unit Tests
 Create a folder named __tests__ and a test file named app.test.js:
-
+```
 mkdir __tests__
 
 Inside __tests__, create app.test.js:
-
+```
 
 // __tests__/app.test.js
+```
 const request = require('supertest');
 const app = require('../app');
 
@@ -83,10 +87,11 @@ describe('API Endpoints', () => {
         expect(res.body).toHaveProperty('error', 'No data provided');
     });
 });
+```
 
 5. Update package.json
 Update the scripts section in package.json to include a test script:
-
+```
 {
   "name": "nodejs-api-unit-test-example",
   "version": "1.0.0",
@@ -107,11 +112,12 @@ Update the scripts section in package.json to include a test script:
     "supertest": "^6.1.3"
   }
 }
-
+```
 6. Run the Tests
 Run the tests using the following command:
-
+```
 npm test
 You should see an output like this:
 
 > nodejs-api-unit-test-example@1.0.0 test
+```
